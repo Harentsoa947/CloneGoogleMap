@@ -1,0 +1,83 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#map{
+    height: 680px;
+}
+.champ_recherche{
+    background: #fff;
+    padding: 60px 20px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
+#resu_rech{
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    padding: 10px;
+}
+a{
+    cursor: pointer;
+}
+.loader, .loader1 {
+    position: absolute;
+    top: 49%;
+    right: 12px;
+    width: 26px;
+    height: 26px;
+    border-radius: 50px;
+    border: 3px solid #ccc;
+    border-top: 3px solid #007bff;
+    transform: translateY(-50%);
+    animation: spin 0.8s linear infinite;
+    /* display: none; caché par défaut */
+}
+.loader{display: none;}
+.loader1{display: none;}
+
+@keyframes spin {
+    0% { 
+        transform: translateY(-50%) rotate(0deg);
+    }
+    100% { 
+        transform: translateY(-50%) rotate(360deg);
+    }
+}
+.distance{
+    background: rgb(169, 75, 75);
+    padding: 10px 30px;
+    border-radius: 10px;
+    color: #fff;
+    display: none;
+    z-index: 1;
+}
+#fond{
+    height: 680px;
+    width: 95%;
+    background: #0000008a;
+    position: absolute;
+    top: 0;
+    left: 23px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+}
+.loader2{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 3px solid #ccc;
+    border-top: 3px solid #007bff;
+    animation: load 1.2s linear infinite;
+}
+
+@keyframes load {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}

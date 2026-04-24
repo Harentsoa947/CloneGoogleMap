@@ -13,77 +13,44 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
     crossorigin=""></script>
+
+   
+
+    <link rel="stylesheet" href="style.css">
     <title>Leaflet avec API</title>
 </head>
-<style>
-    #map{
-        height: 680px;
-    }
-    /* #loader{
-        position: absolute;
-        top: 10px;
-        left: 10px;
-        background: #fff;
-        padding: 8px;
-        border-radius: 5px;
-        box-shadow: 0 0 5px rgba(0,0,0,0.2);
-    } */
-    .recherche{
-        background: #fff;
-        padding: 60px 20px;
-        box-shadow: 0 0 5px rgba(0,0,0,0.2);
-    }
-    #resu_rech{
-        border-radius: 5px;
-        box-shadow: 0 0 5px rgba(0,0,0,0.2);
-        padding: 10px;
-    }
-    a{
-        cursor: pointer;
-    }
-    .loader {
-        position: absolute;
-        top: 49%;
-        right: 12px;
-        width: 26px;
-        height: 26px;
-        border-radius: 50px;
-        border: 3px solid #ccc;
-        border-top: 3px solid #007bff;
-        transform: translateY(-50%);
-        animation: spin 0.8s linear infinite;
-        display: none; /*caché par défaut */
-    }
-
-    @keyframes spin {
-        0% { 
-            transform: translateY(-50%) rotate(0deg);
-        }
-        100% { 
-            transform: translateY(-50%) rotate(360deg);
-        }
-    }
-    .distance{
-        background: rgb(169, 75, 75);
-        padding: 10px 30px;
-        border-radius: 10px;
-        color: #fff;
-        display: none;
-    }
-</style>
 <body>
 
     <div class="container-fluid my-3">
-        <!-- Loader (stand-by) -->
         <div class="row">
-            <div class="col-lg-3 recherche">
+            <div class="col-lg-3 champ_recherche">
+
                 <div class="distance mb-3">12 mètres</div>
-                <form action="" class="form" style="position: relative;">
-                    <div id="loader" class="loader"></div>
-                    <input type="text" id="rech" class="form-control" placeholder="Rechercher">
-                </form>
+
+                <div class="recherche2">
+                    <form action="" style="position: relative;">
+                        <div id="loader1" class="loader1"></div>
+                        <input type="text" class="form-control" id="rech2" placeholder="Changer votre point de départ">
+                        <!-- <a class="btn btn-primary mt-3" href="#" id="confirmation">Confirmer votre position</a> -->
+                    </form>
+                </div>
+
+                <div style="margin: 90px 0;"></div>
+
+                <div class="recherche">
+                    <!-- <div class="distance mb-3">12 mètres</div> -->
+                    <form action="" class="form" style="position: relative;">
+                        <div id="loader" class="loader"></div>
+                        <input type="text" id="rech" class="form-control" placeholder="Rechercher votre destination">
+                    </form>
+                </div>
+                
             </div>
-            <div class="col-lg-9">
+            
+            <div class="col-lg-9" style="position: relative;">
+                <div id="fond">
+                    <div class="loader2"></div>
+                </div>
                 <div id="map"></div>
             </div>
         </div>        
